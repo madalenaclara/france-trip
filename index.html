@@ -431,6 +431,7 @@ DAYS.forEach(d=>{
      <div class="head" onclick="this.parentNode.classList.toggle('open')">
        <div class="daynum" style="background:linear-gradient(150deg,${d.accent},${shade(d.accent)})"><b>${d.n}</b><span>DAY</span></div>
        <div class="ti"><b>${d.title}</b><p>${d.date} · ${d.route}</p></div>
+       <div class="wchip" data-w="${WKEY[d.n]||''}"></div>
        <div class="chev">▶</div>
      </div>
      <div class="body"><div class="inner">
