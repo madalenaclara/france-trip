@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
@@ -7,7 +7,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>France 2026 · Trip</title>
+<title>França 2026 · Viagem</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <style>
   :root{
@@ -174,77 +174,77 @@
   <!-- OVERVIEW -->
   <section id="overview" class="screen active">
     <div class="hero">
-      <div class="kicker">Road Trip · Western France</div>
-      <h1>France 2026 🇫🇷</h1>
-      <div class="datepill">📅 11–19 July 2026 · 9 days</div>
-      <div class="sub">Normandy cliffs, D-Day beaches, the Mont, Brittany & the Atlantic coast.</div>
-      <div class="cdlabel">✈ Countdown to take-off</div>
+      <div class="kicker">Roteiro de Carro · Oeste de França</div>
+      <h1>França 2026 🇫🇷</h1>
+      <div class="datepill">📅 11 a 19 de julho de 2026 · 9 dias</div>
+      <div class="sub">Falésias da Normandia, praias do Dia D, o Mont, a Bretanha e a costa atlântica.</div>
+      <div class="cdlabel">✈ Contagem decrescente para a partida</div>
       <div class="countdown" id="cd">
-        <div class="cd"><b id="cdD">–</b><span>Days</span></div>
-        <div class="cd"><b id="cdH">–</b><span>Hours</span></div>
-        <div class="cd"><b id="cdM">–</b><span>Mins</span></div>
+        <div class="cd"><b id="cdD">·</b><span>Dias</span></div>
+        <div class="cd"><b id="cdH">·</b><span>Horas</span></div>
+        <div class="cd"><b id="cdM">·</b><span>Min</span></div>
       </div>
     </div>
 
     <div class="stats">
-      <div class="stat"><em>🌙</em><b>8</b><span>nights</span></div>
-      <div class="stat"><em>🚗</em><b>1,200</b><span>km</span></div>
-      <div class="stat"><em>📍</em><b>13</b><span>places</span></div>
-      <div class="stat"><em>👥</em><b>2</b><span>adults</span></div>
+      <div class="stat"><em>🌙</em><b>8</b><span>noites</span></div>
+      <div class="stat"><em>🚗</em><b>1.200</b><span>km</span></div>
+      <div class="stat"><em>📍</em><b>13</b><span>locais</span></div>
+      <div class="stat"><em>👥</em><b>2</b><span>adultos</span></div>
     </div>
 
-    <div class="sec"><h2>Where you'll go</h2><span class="small">tap → Discover</span></div>
+    <div class="sec"><h2>Por onde vai passar</h2><span class="small">toque → Descobrir</span></div>
     <div class="scroller" id="dests"></div>
 
-    <div class="sec"><h2>Your journey</h2><span class="small">tap to open a day</span></div>
+    <div class="sec"><h2>A sua viagem</h2><span class="small">toque para abrir um dia</span></div>
     <div class="route" id="route"></div>
 
-    <div class="foot">Tap any stop for its full plan · explore the <b>Map</b> & <b>Discover</b> tabs below 👇</div>
+    <div class="foot">Toque em qualquer paragem para ver o plano completo · explore os separadores <b>Mapa</b> e <b>Descobrir</b> abaixo 👇</div>
   </section>
 
   <!-- MAP -->
   <section id="mapscreen" class="screen">
     <div style="position:relative">
       <div id="map"></div>
-      <div class="maphint">📍 Tap a marker for the day</div>
+      <div class="maphint">📍 Toque num marcador para ver o dia</div>
     </div>
   </section>
 
   <!-- ITINERARY -->
   <section id="itinerary" class="screen">
     <div class="hero" style="padding-bottom:20px">
-      <div class="kicker">Day by day</div>
-      <h1 style="font-size:27px">Your itinerary</h1>
-      <div class="sub">Tap any day to open its timeline, drive times & hotel.</div>
+      <div class="kicker">Dia a dia</div>
+      <h1 style="font-size:27px">O seu itinerário</h1>
+      <div class="sub">Toque num dia para abrir a cronologia, tempos de condução e hotel.</div>
     </div>
     <div id="days"></div>
-    <div class="foot">Times are a suggested pace — flex to taste 🥐</div>
+    <div class="foot">Os horários são um ritmo sugerido, ajuste a gosto 🥐</div>
   </section>
 
   <!-- BOOKINGS -->
   <section id="bookings" class="screen">
     <div class="hero" style="padding-bottom:20px">
-      <div class="kicker">Confirmations</div>
-      <h1 style="font-size:27px">Bookings</h1>
-      <div class="sub">Everything reserved, with cancellation deadlines.</div>
+      <div class="kicker">Confirmações</div>
+      <h1 style="font-size:27px">Reservas</h1>
+      <div class="sub">Tudo reservado, com prazos de cancelamento.</div>
     </div>
-    <div class="sec"><h2>✅ Booked</h2></div>
+    <div class="sec"><h2>✅ Reservado</h2></div>
     <div id="bkOk"></div>
-    <div class="sec"><h2>☐ Still to book</h2></div>
+    <div class="sec"><h2>☐ Ainda por reservar</h2></div>
     <div id="bkTodo"></div>
-    <div class="legend">🔴 non-refundable · 🟢 free-cancel date shown · prices for 2 adults</div>
-    <div class="foot">Mont free-cancel ends 6 Jul · La&nbsp;Rochelle & Bayeux are non-refundable.</div>
+    <div class="legend">🔴 não reembolsável · 🟢 data-limite de cancelamento gratuito · preços para 2 adultos</div>
+    <div class="foot">Cancelamento gratuito do Mont termina a 6 jul · La&nbsp;Rochelle e Bayeux não são reembolsáveis.</div>
   </section>
 
   <!-- DISCOVER -->
   <section id="discover" class="screen">
     <div class="hero" style="padding-bottom:20px">
-      <div class="kicker">Know before you go</div>
-      <h1 style="font-size:27px">Discover</h1>
-      <div class="sub">Live local weather, history, curious facts, key sights & what each place is famous for. Tap to open.</div>
+      <div class="kicker">Saber antes de partir</div>
+      <h1 style="font-size:27px">Descobrir</h1>
+      <div class="sub">Meteorologia local em direto, história, curiosidades, locais a não perder e aquilo por que cada sítio é famoso. Toque para abrir.</div>
     </div>
     <div id="discList"></div>
-    <div class="foot">Curated & fact-checked · 13 places · weather is live right now 🌤️</div>
+    <div class="foot">Selecionado e verificado · 13 locais · meteorologia em direto 🌤️</div>
   </section>
 
 </div>
@@ -252,15 +252,15 @@
 <!-- TAB BAR -->
 <nav class="tabbar">
   <button class="tab active" data-s="overview">
-    <svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg>Home</button>
+    <svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg>Início</button>
   <button class="tab" data-s="mapscreen">
-    <svg viewBox="0 0 24 24"><path d="M9 3L3 6v15l6-3 6 3 6-3V3l-6 3-6-3z"/><path d="M9 3v15M15 6v15"/></svg>Map</button>
+    <svg viewBox="0 0 24 24"><path d="M9 3L3 6v15l6-3 6 3 6-3V3l-6 3-6-3z"/><path d="M9 3v15M15 6v15"/></svg>Mapa</button>
   <button class="tab" data-s="itinerary">
-    <svg viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="3.5" cy="6" r="1.3"/><circle cx="3.5" cy="12" r="1.3"/><circle cx="3.5" cy="18" r="1.3"/></svg>Days</button>
+    <svg viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="3.5" cy="6" r="1.3"/><circle cx="3.5" cy="12" r="1.3"/><circle cx="3.5" cy="18" r="1.3"/></svg>Dias</button>
   <button class="tab" data-s="discover">
-    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5l-2 5-5 2 2-5z"/></svg>Discover</button>
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5l-2 5-5 2 2-5z"/></svg>Descobrir</button>
   <button class="tab" data-s="bookings">
-    <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Bookings</button>
+    <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Reservas</button>
 </nav>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -268,123 +268,123 @@
 const DEPART = new Date("2026-07-11T09:50:00+01:00");
 
 const DESTS = [
-  {e:"🏯",c:"#6b5b95",n:"Gisors",d:"Templar-legend castle on Day 1"},
-  {e:"🪨",c:"#2E5496",n:"Étretat",d:"Alabaster cliffs Monet painted"},
-  {e:"⚓",c:"#3a7ca5",n:"Honfleur",d:"Postcard slate-fronted port"},
-  {e:"🎖️",c:"#6b7a3a",n:"Bayeux & D-Day",d:"1066 tapestry + 1944 beaches"},
-  {e:"🏰",c:"#7d5ba6",n:"Mont S-Michel",d:"Abbey island at dawn"},
-  {e:"🦪",c:"#2a9d8f",n:"Cancale & St-Malo",d:"Oysters + corsair ramparts"},
-  {e:"🏘️",c:"#b5651d",n:"Dinan",d:"Brittany's medieval gem"},
-  {e:"⛵",c:"#1d7874",n:"La Rochelle",d:"The white Atlantic port"},
-  {e:"🏝️",c:"#e09f3e",n:"Île de Ré",d:"Whitewashed island villages"},
-  {e:"🛶",c:"#52796f",n:"Marais Poitevin",d:"\"Green Venice\" canals"},
-  {e:"🐘",c:"#9c2c2c",n:"Nantes",d:"The giant mechanical elephant"},
+  {e:"🏯",c:"#6b5b95",n:"Gisors",d:"Castelo com lenda dos Templários (Dia 1)"},
+  {e:"🪨",c:"#2E5496",n:"Étretat",d:"Falésias de alabastro pintadas por Monet"},
+  {e:"⚓",c:"#3a7ca5",n:"Honfleur",d:"Porto de postal com fachadas de ardósia"},
+  {e:"🎖️",c:"#6b7a3a",n:"Bayeux e Dia D",d:"Tapeçaria de 1066 + praias de 1944"},
+  {e:"🏰",c:"#7d5ba6",n:"Mont S-Michel",d:"Ilha-abadia ao amanhecer"},
+  {e:"🦪",c:"#2a9d8f",n:"Cancale e St-Malo",d:"Ostras + muralhas corsárias"},
+  {e:"🏘️",c:"#b5651d",n:"Dinan",d:"Joia medieval da Bretanha"},
+  {e:"⛵",c:"#1d7874",n:"La Rochelle",d:"O porto branco do Atlântico"},
+  {e:"🏝️",c:"#e09f3e",n:"Île de Ré",d:"Aldeias caiadas de branco na ilha"},
+  {e:"🛶",c:"#52796f",n:"Marais Poitevin",d:"Canais da \"Veneza Verde\""},
+  {e:"🐘",c:"#9c2c2c",n:"Nantes",d:"O elefante mecânico gigante"},
 ];
 
 const DAYS = [
- {n:1,date:"Sat 11 Jul",title:"Lisbon → Gisors → Étretat",route:"Fly in, a Templar castle, then the cliffs",accent:"#2E5496",
+ {n:1,date:"Sáb 11 jul",title:"Lisboa → Gisors → Étretat",route:"Chegada de avião, um castelo templário e as falésias",accent:"#2E5496",
   tags:["✈ AF1225 09:50→13:20","🚗 245 km · ~3h"],
   ll:[49.7073,0.2047],
   ev:[
-   {t:"09:50",n:"✈ Fly LIS → Paris CDG",d:"Air France AF1225 · Terminal 1 → 2F · land 13:20"},
-   {t:"14:30",n:"🚗 Pick up the car",d:"Renault Arkana (automatic) · CDG Terminal 2E/F"},
-   {t:"15:35",n:"🏯 Gisors",d:"Templar-legend castle & keep, en route (~1h stop)"},
-   {t:"17:50",n:"🪨 Étretat — the cliffs",d:"Walk Falaise d'Aval & d'Amont in the low evening sun"},
+   {t:"09:50",n:"✈ Voar LIS → Paris CDG",d:"Air France AF1225 · Terminal 1 → 2F · aterra 13:20"},
+   {t:"14:30",n:"🚗 Levantar o carro",d:"Renault Arkana (automático) · CDG Terminal 2E/F"},
+   {t:"15:35",n:"🏯 Gisors",d:"Castelo e torre de menagem com lenda templária, a caminho (~1h)"},
+   {t:"17:50",n:"🪨 Étretat: as falésias",d:"Passeio pela Falaise d'Aval e d'Amont na luz do fim de tarde"},
   ],
   hotel:{n:"Villa Maurice",sub:"Étretat · 15 Rue Alphonse Karr",ok:true}},
 
- {n:2,date:"Sun 12 Jul",title:"Étretat → Honfleur → Bayeux",route:"Two Norman classics",accent:"#3a7ca5",
+ {n:2,date:"Dom 12 jul",title:"Étretat → Honfleur → Bayeux",route:"Dois clássicos normandos",accent:"#3a7ca5",
   tags:["🚗 130 km · ~2h","🛏 Bayeux 1/2"],
   ll:[49.2764,-0.7024],
   ev:[
-   {t:"10:30",n:"⚓ Honfleur",d:"Vieux Bassin + harbour lunch (via Pont de Normandie)"},
-   {t:"16:00",n:"⛪ Bayeux",d:"Cathedral at golden hour, dinner in the old town"},
+   {t:"10:30",n:"⚓ Honfleur",d:"Vieux Bassin + almoço no porto (pela Pont de Normandie)"},
+   {t:"16:00",n:"⛪ Bayeux",d:"Catedral à hora dourada, jantar na cidade velha"},
   ],
-  hotel:{n:"Churchill Hotel Bayeux Centre",sub:"Bayeux · 2 nights",ok:true}},
+  hotel:{n:"Churchill Hotel Bayeux Centre",sub:"Bayeux · 2 noites",ok:true}},
 
- {n:3,date:"Mon 13 Jul",title:"Bayeux — 1066 & 1944",route:"D-Day country",accent:"#6b7a3a",
-  tags:["🚗 D-Day loop ~77 km","🎖️ Full day"],
+ {n:3,date:"Seg 13 jul",title:"Bayeux: 1066 e 1944",route:"Terra do Dia D",accent:"#6b7a3a",
+  tags:["🚗 Circuito Dia D ~77 km","🎖️ Dia inteiro"],
   ll:[49.34,-0.85],
   ev:[
-   {t:"09:00",n:"🧵 Bayeux Tapestry",d:"Go early, before the tour buses"},
-   {t:"11:30",n:"🪖 Pointe du Hoc",d:"Cratered cliffs, bunkers left as they were"},
-   {t:"14:00",n:"🌊 Omaha Beach & US Cemetery",d:"Walk the beach, then the cemetery above"},
-   {t:"16:30",n:"⚙️ Arromanches",d:"The Mulberry artificial-harbour remains"},
+   {t:"09:00",n:"🧵 Tapeçaria de Bayeux",d:"Ir cedo, antes dos autocarros de turismo"},
+   {t:"11:30",n:"🪖 Pointe du Hoc",d:"Falésias com crateras, bunkers como ficaram"},
+   {t:"14:00",n:"🌊 Praia de Omaha e Cemitério Americano",d:"Percorrer a praia e depois o cemitério no alto"},
+   {t:"16:30",n:"⚙️ Arromanches",d:"Restos do porto artificial Mulberry"},
   ],
-  hotel:{n:"Churchill Hotel Bayeux Centre",sub:"Bayeux · night 2",ok:true}},
+  hotel:{n:"Churchill Hotel Bayeux Centre",sub:"Bayeux · noite 2",ok:true}},
 
- {n:4,date:"Tue 14 Jul",title:"Bayeux → Mont Saint-Michel",route:"The Mont at dusk",accent:"#7d5ba6",
-  tags:["🚗 142 km · 2h","🌅 Sunset arrival"],
+ {n:4,date:"Ter 14 jul",title:"Bayeux → Mont Saint-Michel",route:"O Mont ao entardecer",accent:"#7d5ba6",
+  tags:["🚗 142 km · 2h","🌅 Chegada ao pôr do sol"],
   ll:[48.6361,-1.5115],
   ev:[
-   {t:"10:00",n:"📜 Avranches",d:"Scriptorial manuscripts + Jardin des Plantes view"},
-   {t:"15:30",n:"🏰 Mont Saint-Michel",d:"Walk up at sunset as the day-trippers leave"},
+   {t:"10:00",n:"📜 Avranches",d:"Manuscritos do Scriptorial + vista do Jardin des Plantes"},
+   {t:"15:30",n:"🏰 Mont Saint-Michel",d:"Subir ao pôr do sol, quando os visitantes de um dia partem"},
   ],
-  hotel:{n:"Le Relais du Roy",sub:"La Caserne · by the free shuttle",ok:true}},
+  hotel:{n:"Le Relais du Roy",sub:"La Caserne · junto ao autocarro gratuito",ok:true}},
 
- {n:5,date:"Wed 15 Jul",title:"Mont → Cancale → St-Malo → Dinan",route:"Dawn, oysters & corsairs",accent:"#2a9d8f",
-  tags:["🚗 92 km","🦪 Coast day"],
+ {n:5,date:"Qua 15 jul",title:"Mont → Cancale → St-Malo → Dinan",route:"Amanhecer, ostras e corsários",accent:"#2a9d8f",
+  tags:["🚗 92 km","🦪 Dia de costa"],
   ll:[48.4554,-2.0489],
   ev:[
-   {t:"09:30",n:"🏰 Mont abbey — booked entry",d:"Your timed ticket; the Knights' Hall & cloister"},
-   {t:"12:00",n:"🦪 Cancale",d:"Oysters straight from the producers on the seawall"},
-   {t:"14:30",n:"🏴‍☠️ Saint-Malo",d:"Walk the Intra-Muros ramparts"},
-   {t:"18:00",n:"🏘️ Dinan",d:"Rue du Jerzual at golden hour, crêperie dinner"},
+   {t:"09:30",n:"🏰 Abadia do Mont: entrada reservada",d:"O seu bilhete com hora; a Sala dos Cavaleiros e o claustro"},
+   {t:"12:00",n:"🦪 Cancale",d:"Ostras diretamente dos produtores, no paredão"},
+   {t:"14:30",n:"🏴‍☠️ Saint-Malo",d:"Percorrer as muralhas Intra-Muros"},
+   {t:"18:00",n:"🏘️ Dinan",d:"Rue du Jerzual à hora dourada, jantar de crêpes"},
   ],
-  hotel:{n:"Cafe Hôtel du Théâtre",sub:"Dinan old town",ok:true}},
+  hotel:{n:"Cafe Hôtel du Théâtre",sub:"Centro histórico de Dinan",ok:true}},
 
- {n:6,date:"Thu 16 Jul",title:"Dinan → La Rochelle",route:"South to the Atlantic",accent:"#b5651d",
-  tags:["🚗 310 km · 3h30","🌉 Longest drive"],
+ {n:6,date:"Qui 16 jul",title:"Dinan → La Rochelle",route:"Rumo ao Atlântico, a sul",accent:"#b5651d",
+  tags:["🚗 310 km · 3h30","🌉 Viagem mais longa"],
   ll:[46.1603,-1.1511],
   ev:[
-   {t:"09:00",n:"🧱 Dinan ramparts",d:"Tour de l'Horloge, then leave by ~11:00"},
-   {t:"13:00",n:"🍴 Lunch near Nantes",d:"Break the drive halfway"},
-   {t:"17:00",n:"⛵ La Rochelle",d:"Vieux Port + the lit towers, harbour dinner"},
+   {t:"09:00",n:"🧱 Muralhas de Dinan",d:"Tour de l'Horloge e partir por volta das 11:00"},
+   {t:"13:00",n:"🍴 Almoço perto de Nantes",d:"Quebrar a viagem a meio"},
+   {t:"17:00",n:"⛵ La Rochelle",d:"Vieux Port + as torres iluminadas, jantar no porto"},
   ],
-  hotel:{n:"Le Saint-Nicolas",sub:"La Rochelle · 2 nights",ok:true}},
+  hotel:{n:"Le Saint-Nicolas",sub:"La Rochelle · 2 noites",ok:true}},
 
- {n:7,date:"Fri 17 Jul",title:"Île de Ré + La Rochelle",route:"Whitewashed island day",accent:"#e09f3e",
-  tags:["🌉 Bridge toll ~€8","🚲 Bike day"],
+ {n:7,date:"Sex 17 jul",title:"Île de Ré + La Rochelle",route:"Dia na ilha caiada de branco",accent:"#e09f3e",
+  tags:["🌉 Portagem da ponte ~8€","🚲 Dia de bicicleta"],
   ll:[46.2017,-1.3667],
   ev:[
-   {t:"09:30",n:"🏝️ Île de Ré",d:"Saint-Martin-de-Ré, La Flotte market, Phare des Baleines"},
-   {t:"16:00",n:"🐠 La Rochelle",d:"The aquarium or the three medieval towers"},
+   {t:"09:30",n:"🏝️ Île de Ré",d:"Saint-Martin-de-Ré, mercado de La Flotte, Phare des Baleines"},
+   {t:"16:00",n:"🐠 La Rochelle",d:"O aquário ou as três torres medievais"},
   ],
-  hotel:{n:"Le Saint-Nicolas",sub:"La Rochelle · night 2",ok:true}},
+  hotel:{n:"Le Saint-Nicolas",sub:"La Rochelle · noite 2",ok:true}},
 
- {n:8,date:"Sat 18 Jul",title:"La Rochelle → Marais → Nantes",route:"Green Venice & the city",accent:"#52796f",
-  tags:["🚗 190 km","🛶 Punt boat"],
+ {n:8,date:"Sáb 18 jul",title:"La Rochelle → Marais → Nantes",route:"Veneza Verde e a cidade",accent:"#52796f",
+  tags:["🚗 190 km","🛶 Passeio de barco"],
   ll:[47.2184,-1.5536],
   ev:[
-   {t:"11:00",n:"🛶 Marais Poitevin",d:"A punt-boat glide through the canals at Coulon"},
-   {t:"16:00",n:"🐘 Nantes",d:"Evening in the lively Bouffay quarter"},
+   {t:"11:00",n:"🛶 Marais Poitevin",d:"Passeio de barco pelos canais, em Coulon"},
+   {t:"16:00",n:"🐘 Nantes",d:"Fim de tarde no animado bairro de Bouffay"},
   ],
   hotel:{n:"Best Western Hotel Graslin",sub:"Nantes · 1 Rue Piron, Centre Ville",ok:true}},
 
- {n:9,date:"Sun 19 Jul",title:"Nantes → Lisbon",route:"The giant elephant & home",accent:"#9c2c2c",
-  tags:["✈ TO7820 18:05→19:20","🐘 Final morning"],
+ {n:9,date:"Dom 19 jul",title:"Nantes → Lisboa",route:"O elefante gigante e o regresso",accent:"#9c2c2c",
+  tags:["✈ TO7820 18:05→19:20","🐘 Última manhã"],
   ll:[47.2184,-1.5536],
   ev:[
-   {t:"09:00",n:"🐘 Les Machines de l'Île",d:"The Grand Éléphant + Château des Ducs"},
-   {t:"14:30",n:"🚗 Drop the car",d:"Nantes Atlantique (NTE) — lunch first, no rush"},
-   {t:"18:05",n:"✈ Fly NTE → Lisbon",d:"Transavia TO7820 · land 19:20 · ref KJEURH"},
+   {t:"09:00",n:"🐘 Les Machines de l'Île",d:"O Grand Éléphant + Château des Ducs"},
+   {t:"14:30",n:"🚗 Entregar o carro",d:"Nantes Atlantique (NTE), almoço antes, sem pressa"},
+   {t:"18:05",n:"✈ Voar NTE → Lisboa",d:"Transavia TO7820 · aterra 19:20 · ref KJEURH"},
   ],
   hotel:null},
 ];
 
 const BOOKINGS = [
- {ic:"✈️",t:"Air France AF1225",s:"LIS T1 09:50 → CDG T2F 13:20",d:"Sat 11 Jul",ok:true,pr:"paid",cx:null,ref:"ZVTFHN · tkt 0572358752253"},
- {ic:"🚗",t:"Renault Arkana · automatic",s:"Budget · CDG T2E/F → Nantes NTE · 8 days",d:"11–19 Jul",ok:true,pr:"paid",cx:{txt:"check terms",cl:"warn"},ref:"657869748"},
- {ic:"🛏️",t:"Villa Maurice",s:"Étretat · 1 night",d:"11–12 Jul",ok:true,pr:"€165",cx:{txt:"Free until 9 Jul",cl:"free"},ref:"6185332214"},
- {ic:"🛏️",t:"Churchill Hotel Bayeux Centre",s:"Bayeux · 2 nights",d:"12–14 Jul",ok:true,pr:"€412.20",cx:{txt:"Non-refundable",cl:"hard"},ref:"5752473040"},
- {ic:"🛏️",t:"Le Relais du Roy",s:"Mont S-M · La Caserne",d:"14–15 Jul",ok:true,pr:"€162.88",cx:{txt:"Free until 6 Jul",cl:"free"},ref:"6744677040"},
- {ic:"🛏️",t:"Cafe Hôtel du Théâtre",s:"Dinan old town",d:"15–16 Jul",ok:true,pr:"€75",cx:{txt:"Free until 13 Jul",cl:"free"},ref:"5763847070"},
- {ic:"🛏️",t:"Le Saint-Nicolas",s:"La Rochelle · 2 nights",d:"16–18 Jul",ok:true,pr:"€266.61",cx:{txt:"Non-refundable",cl:"hard"},ref:"5657462792"},
- {ic:"✈️",t:"Transavia TO7820",s:"NTE 18:05 → LIS 19:20",d:"Sun 19 Jul",ok:true,pr:"paid",cx:null,ref:"KJEURH"},
- {ic:"🎟️",t:"Mont S-M Abbey entry",s:"Timed entry · 2 adults",d:"15 Jul 09:30",ok:true,pr:"€70",cx:{txt:"Non-refundable",cl:"hard"},ref:"2615646561280423030"},
- {ic:"🛏️",t:"Best Western Hotel Graslin",s:"Nantes · 1 Rue Piron, Centre Ville",d:"18–19 Jul",ok:true,pr:"€99.60",cx:{txt:"Non-refundable",cl:"hard"},ref:"5355398693"},
- {ic:"🎟️",t:"Bayeux Tapestry tickets",s:"Timed entry · 09:00 slot",d:"13 Jul",ok:false,pr:"~€12pp",cx:null},
- {ic:"🛶",t:"Marais Poitevin punt",s:"Green Venice · Coulon",d:"18 Jul",ok:false,pr:"~€15pp",cx:null},
+ {ic:"✈️",t:"Air France AF1225",s:"LIS T1 09:50 → CDG T2F 13:20",d:"Sáb 11 jul",ok:true,pr:"pago",cx:null,ref:"ZVTFHN · bilh 0572358752253"},
+ {ic:"🚗",t:"Renault Arkana · automático",s:"Budget · CDG T2E/F → Nantes NTE · 8 dias",d:"11 a 19 jul",ok:true,pr:"pago",cx:{txt:"ver condições",cl:"warn"},ref:"657869748"},
+ {ic:"🛏️",t:"Villa Maurice",s:"Étretat · 1 noite",d:"11 a 12 jul",ok:true,pr:"165 €",cx:{txt:"Grátis até 9 jul",cl:"free"},ref:"6185332214"},
+ {ic:"🛏️",t:"Churchill Hotel Bayeux Centre",s:"Bayeux · 2 noites",d:"12 a 14 jul",ok:true,pr:"412,20 €",cx:{txt:"Não reembolsável",cl:"hard"},ref:"5752473040"},
+ {ic:"🛏️",t:"Le Relais du Roy",s:"Mont S-M · La Caserne",d:"14 a 15 jul",ok:true,pr:"162,88 €",cx:{txt:"Grátis até 6 jul",cl:"free"},ref:"6744677040"},
+ {ic:"🛏️",t:"Cafe Hôtel du Théâtre",s:"Centro histórico de Dinan",d:"15 a 16 jul",ok:true,pr:"75 €",cx:{txt:"Grátis até 13 jul",cl:"free"},ref:"5763847070"},
+ {ic:"🛏️",t:"Le Saint-Nicolas",s:"La Rochelle · 2 noites",d:"16 a 18 jul",ok:true,pr:"266,61 €",cx:{txt:"Não reembolsável",cl:"hard"},ref:"5657462792"},
+ {ic:"✈️",t:"Transavia TO7820",s:"NTE 18:05 → LIS 19:20",d:"Dom 19 jul",ok:true,pr:"pago",cx:null,ref:"KJEURH"},
+ {ic:"🎟️",t:"Entrada Abadia do Mont",s:"Entrada com hora · 2 adultos",d:"15 jul 09:30",ok:true,pr:"70 €",cx:{txt:"Não reembolsável",cl:"hard"},ref:"2615646561280423030"},
+ {ic:"🛏️",t:"Best Western Hotel Graslin",s:"Nantes · 1 Rue Piron, Centre Ville",d:"18 a 19 jul",ok:true,pr:"99,60 €",cx:{txt:"Não reembolsável",cl:"hard"},ref:"5355398693"},
+ {ic:"🎟️",t:"Bilhetes Tapeçaria de Bayeux",s:"Entrada com hora · 09:00",d:"13 jul",ok:false,pr:"~12 €/p",cx:null},
+ {ic:"🛶",t:"Barco no Marais Poitevin",s:"Veneza Verde · Coulon",d:"18 jul",ok:false,pr:"~15 €/p",cx:null},
 ];
 
 /* ---------- render overview ---------- */
@@ -398,7 +398,7 @@ function shade(h){return h+"cc";}
 const WKEY={1:"Étretat",2:"Bayeux",3:"Bayeux",4:"Mont Saint-Michel",5:"Dinan",6:"La Rochelle",7:"La Rochelle",8:"Nantes",9:"Lisbon"};
 const routeEl=document.getElementById('route');
 DAYS.forEach(d=>{
-  const sleep=d.hotel?`🛏 ${d.hotel.n}`:`🏠 Fly home to Lisbon`;
+  const sleep=d.hotel?`🛏 ${d.hotel.n}`:`🏠 Regresso a Lisboa`;
   routeEl.insertAdjacentHTML('beforeend',
    `<div class="rstop" onclick="goDay(${d.n})">
      <div class="rnode" style="background:linear-gradient(150deg,${d.accent},${shade(d.accent)})">${d.n}</div>
@@ -424,12 +424,12 @@ DAYS.forEach(d=>{
   const evs=d.ev.map(e=>`<div class="ev"><div class="tm">${e.t}</div><div class="nm">${e.n}</div><div class="ds">${e.d}</div></div>`).join("");
   const tags=d.tags.map((t,i)=>`<span class="tag ${i===1&&t.includes('km')?'drive':''}">${t}</span>`).join("");
   const sleep=d.hotel?`<div class="sleep"><div class="ic">🛏️</div><div class="t"><b>${d.hotel.n}</b><p>${d.hotel.sub}</p></div>
-     <span class="badge ${d.hotel.ok?'ok':'todo'}">${d.hotel.ok?'BOOKED':'TO BOOK'}</span></div>`
-    :`<div class="sleep"><div class="ic">🏠</div><div class="t"><b>Fly home</b><p>Trip ends — Lisbon by 19:20</p></div></div>`;
+     <span class="badge ${d.hotel.ok?'ok':'todo'}">${d.hotel.ok?'RESERVADO':'POR RESERVAR'}</span></div>`
+    :`<div class="sleep"><div class="ic">🏠</div><div class="t"><b>Regresso a casa</b><p>A viagem termina, Lisboa às 19:20</p></div></div>`;
   daysEl.insertAdjacentHTML('beforeend',
    `<div class="day" id="dayCard-${d.n}" style="border-left-color:${d.accent}">
      <div class="head" onclick="this.parentNode.classList.toggle('open')">
-       <div class="daynum" style="background:linear-gradient(150deg,${d.accent},${shade(d.accent)})"><b>${d.n}</b><span>DAY</span></div>
+       <div class="daynum" style="background:linear-gradient(150deg,${d.accent},${shade(d.accent)})"><b>${d.n}</b><span>DIA</span></div>
        <div class="ti"><b>${d.title}</b><p>${d.date} · ${d.route}</p></div>
        <div class="wchip" data-w="${WKEY[d.n]||''}"></div>
        <div class="chev">▶</div>
@@ -456,71 +456,71 @@ document.getElementById('bkTodo').innerHTML=BOOKINGS.filter(b=>!b.ok).map(bkHTML
 
 /* ---------- discover ---------- */
 const DISC=[
- {e:"🏯",c:"#6b5b95",n:"Gisors",intro:"A quiet Norman market town guarding a dramatic motte-and-keep castle wrapped in Knights Templar legend.",
-  history:["Its border fortress was begun in 1097 by William Rufus and later strengthened by Henry II Plantagenet.","Under the town's great elm in 1188, Henry II and France's Philippe Auguste held a fateful parley before the Third Crusade."],
-  curious:"In 1946 a castle caretaker, Roger Lhomoy, claimed he'd dug into a hidden chapel holding 19 stone sarcophagi and 30 treasure chests — never verified, but the Templar-treasure legend lives on. (Grand Master Jacques de Molay was even held prisoner here, 1310–14.)",
-  visit:["The Château de Gisors keep & motte","Église St-Gervais-St-Protais (Gothic–Renaissance)","The ramparts & castle gardens","The old market town"],
-  knownFor:"Its Knights Templar treasure legend and one of Normandy's finest motte-and-keep castles."},
- {e:"🪨",c:"#2E5496",n:"Étretat",intro:"Cliffside fishing village on the Alabaster Coast, where chalk headlands plunge into the sea in giant arches and a lone rock 'needle'.",
-  history:["A humble fishing village until ~1850, when it became a fashionable resort drawing Parisian artists and writers.","Monet returned every year from 1883–86, painting 60+ canvases of these cliffs."],
-  curious:"Maupassant compared the Porte d'Aval arch to an elephant dipping its trunk into the sea — you can't unsee it.",
-  visit:["Porte d'Aval arch & the Aiguille ('Needle')","Porte d'Amont cliff","Clifftop Notre-Dame de la Garde chapel","The pebble beach & promenade"],
-  knownFor:"Impressionist painting (Monet, Boudin, Courbet) — and Maurice Leblanc's gentleman-thief Arsène Lupin, set at the Needle."},
- {e:"⚓",c:"#3a7ca5",n:"Honfleur",intro:"A picture-perfect Norman port where tall slate-fronted houses lean over a 17th-century harbour painted countless times.",
-  history:["From this port Samuel de Champlain sailed in 1608 to found Québec City.","The Vieux Bassin harbour was built in 1681 on the order of Louis XIV's minister Colbert."],
-  curious:"Église Sainte-Catherine is France's largest wooden church — built by shipwrights, its twin naves look like upturned boat hulls.",
-  visit:["The Vieux Bassin (Old Harbour)","Église Sainte-Catherine & its detached bell tower","Eugène Boudin Museum","The old salt warehouses"],
-  knownFor:"A birthplace of Impressionism — home of painter Eugène Boudin (Monet's mentor) and of composer Erik Satie."},
- {e:"🎖️",c:"#6b7a3a",n:"Bayeux",intro:"A handsome medieval town that escaped wartime ruin and guards the world's most famous embroidered chronicle.",
-  history:["The first town in mainland France liberated after D-Day, on 7 June 1944 — and it survived almost undamaged.","The Tapestry was likely commissioned in the 1070s by Bishop Odo, William the Conqueror's half-brother."],
-  curious:"The 'Bayeux Tapestry' isn't a tapestry — it's a 70-metre embroidery. The Nazis hid it in the Louvre and nearly shipped it to Berlin in 1944.",
-  visit:["The Bayeux Tapestry museum","Notre-Dame Cathedral","Bayeux War Cemetery","Medieval old town & watermill on the Aure"],
-  knownFor:"The 11th-century Bayeux Tapestry of the 1066 Norman Conquest — and, historically, Bayeux lace."},
- {e:"🪖",c:"#7a6a45",n:"D-Day Beaches",intro:"The Normandy shore where history's largest seaborne invasion landed on 6 June 1944 — cliffs, cemeteries and the bones of a man-made harbour.",
-  history:["At Pointe du Hoc, US Rangers scaled 30-metre cliffs only to find the German guns already moved inland.","'Bloody Omaha' cost some 2,400 American casualties in a single day."],
-  curious:"At Arromanches the Allies towed in a prefab 'Mulberry' harbour nicknamed Port Winston — built to last 3 months, it served 10.",
-  visit:["Pointe du Hoc's cratered clifftop","Omaha Beach","Normandy American Cemetery, Colleville (9,387 graves)","Arromanches & its Mulberry caissons"],
-  knownFor:"The D-Day landings and Battle of Normandy — the pilgrimage ground of WWII remembrance."},
- {e:"🏰",c:"#7d5ba6",n:"Mont Saint-Michel",intro:"A soaring Gothic abbey crowning a rocky islet that the sea encircles and abandons twice a day.",
-  history:["Founded in 708 when, by legend, the Archangel Michael appeared to Bishop Aubert of Avranches.","A great medieval pilgrimage site; a UNESCO World Heritage Site since 1979."],
-  curious:"Locals warn the tides rush in 'as fast as a galloping horse' (~a metre a minute) across sands that hide quicksand.",
-  visit:["The abbey church & cloister","Medieval ramparts & the Grande Rue","The bay at high and low tide","The new footbridge"],
-  knownFor:"Its tidal-island abbey — and the airy soufflé omelette of La Mère Poulard, served to pilgrims since the 1880s."},
- {e:"🦪",c:"#2a9d8f",n:"Cancale",intro:"A salt-sprayed fishing port on the bay whose entire identity is built around one shimmering mollusc: the oyster.",
-  history:["Named official supplier of oysters to the French royal table — Louis XIV had them rushed to Versailles by the cartload.","Romans prized oysters from these wild beds some 2,000 years ago."],
-  curious:"Buy oysters from the quayside market by the lighthouse, eat them on the sea wall, and toss the empty shells onto the beach below.",
-  visit:["The oyster market & Pointe du Hock viewpoint","The working harbour (Port de la Houle)","Seafront seafood restaurants","Views across to Mont Saint-Michel"],
-  knownFor:"Cancale oysters — France's 'oyster capital', with vast tidal beds yielding thousands of tons a year."},
- {e:"🏴‍☠️",c:"#36648b",n:"Saint-Malo",intro:"A granite walled city rising straight from the sea, swaggering with the ghosts of the corsairs who made it rich.",
-  history:["The 'Cité Corsaire' sent royally-licensed privateers (Duguay-Trouin, Surcouf) to plunder enemy ships for centuries.","Its navigator Jacques Cartier sailed from here in 1534 and claimed Canada for France."],
-  curious:"The bay has some of Europe's highest tides (~13 m) — walk out to island forts at low water, then get marooned when the sea rushes back.",
-  visit:["The ramparts walk","Grand Bé island & Chateaubriand's tomb","The corsair mansion (Hôtel Magon)","The malouinière mansions"],
-  knownFor:"Corsair heritage and the malouinières — grand mansions built by privateers flush with sea-raid fortunes."},
- {e:"🏘️",c:"#b5651d",n:"Dinan",intro:"A perfectly preserved medieval town of timber-framed houses tumbling down a cobbled hill to a tranquil river port.",
-  history:["The steep Rue du Jerzual linked the upper town to the Rance port for ten centuries, thronged with weavers and tanners.","The heart of Breton knight Bertrand du Guesclin rests in the Basilique Saint-Sauveur."],
-  curious:"Du Guesclin's body was so prized after his death in 1380 that it was split and buried in four places — only his heart made it home to Dinan.",
-  visit:["Rue du Jerzual & the riverside port","The 14th-c castle & 3 km of ramparts","The Tour de l'Horloge clock tower","Basilique Saint-Sauveur"],
-  knownFor:"Artisan workshops — glass-blowers, wood-gilders and craftspeople — lining the medieval Rue du Jerzual."},
- {e:"⛵",c:"#1d7874",n:"La Rochelle",intro:"A luminous Atlantic port where three medieval towers still guard a yacht-filled harbour ringed by arcaded streets.",
-  history:["A defiant Huguenot stronghold that declared itself a republic before Richelieu's brutal 1627–28 siege starved it from ~27,000 to ~5,000.","The Saint-Nicolas & Chain towers once stretched a giant iron chain between them each night to seal the Old Port."],
-  curious:"The Lantern Tower — the Atlantic coast's oldest lighthouse — holds 600+ graffiti carved by prisoners once held there.",
-  visit:["The three harbour towers","The arcaded old town","The Aquarium","Vieux-Port at dusk"],
-  knownFor:"Maritime heritage and one of Europe's top aquariums (12,000 animals + a sea-turtle rescue centre)."},
- {e:"🏝️",c:"#e09f3e",n:"Île de Ré",intro:"A flat, whitewashed, hollyhock-draped island of salt marshes and bike paths, linked to the mainland by a soaring 3 km bridge.",
-  history:["Salt-making here dates to the Middle Ages and, after near-collapse, has revived to ~30 producers today.","Star-shaped Fort la Prée (1625) is the island's oldest fort, from when England's Buckingham besieged the island."],
-  curious:"Marsh donkeys were once dressed in cloth 'trousers' to shield their legs from biting mosquitoes — a quirk now revived for tourists.",
-  visit:["Saint-Martin-de-Ré harbour & Vauban ramparts","The salt marshes","110 km of cycle paths","Phare des Baleines lighthouse"],
-  knownFor:"Hand-harvested fleur de sel, oysters, 'donkeys in trousers', and cycling."},
- {e:"🛶",c:"#52796f",n:"Marais Poitevin",intro:"A hushed, emerald labyrinth of tree-shaded canals best explored gliding along in a flat-bottomed boat.",
-  history:["The drainage canals were first dug by Benedictine monks in the 10th–13th centuries, reclaiming the former Gulf of the Pictons.","The 'Green Venice' nickname stuck by the 19th century; it became a Regional Natural Park in 1979."],
-  curious:"The traditional flat-bottomed barques were once so stable they ferried cattle between waterside meadows.",
-  visit:["A guided barque trip from a village embarcadère","Coulon, the marsh's 'capital'","Cycling or canoeing the wet marsh","The abundant birdlife"],
-  knownFor:"Its punted flat-bottomed barques and a patchwork of duckweed-green canals and poplar-lined islets."},
- {e:"🐘",c:"#9c2c2c",n:"Nantes",intro:"A reinvented Loire-side former ducal capital where giant mechanical creatures roam an island and art spills through the streets.",
-  history:["The Château des Ducs de Bretagne was the seat of Brittany's last dukes, including Anne of Brittany, twice Queen of France.","France's biggest 18th-c slave-trading port, Nantes now confronts that past with a Memorial to the Abolition of Slavery on the quay."],
-  curious:"Jules Verne, born here in 1828, reputedly drew his seafaring imagination from the tall ships crowding the city's quays.",
-  visit:["Les Machines de l'Île (the Great Elephant)","Château des Ducs de Bretagne","Jules Verne Museum","Le Lieu Unique (old LU biscuit factory)"],
-  knownFor:"Les Machines de l'Île, LU 'Petit Beurre' biscuits, and crisp Muscadet white wine."},
+ {e:"🏯",c:"#6b5b95",n:"Gisors",intro:"Vila normanda tranquila que guarda um imponente castelo de mota e torre de menagem, envolto na lenda dos Cavaleiros Templários.",
+  history:["A sua fortaleza de fronteira foi iniciada em 1097 por Guilherme Rufo e mais tarde reforçada por Henrique II Plantageneta.","Sob o grande olmo da vila, em 1188, Henrique II e Filipe Augusto de França tiveram uma conversa decisiva antes da Terceira Cruzada."],
+  curious:"Em 1946, um guarda do castelo, Roger Lhomoy, alegou ter escavado até uma capela escondida com 19 sarcófagos de pedra e 30 arcas de tesouro; nunca foi confirmado, mas a lenda do tesouro templário perdura. (O Grão-Mestre Jacques de Molay chegou a estar aqui preso, de 1310 a 1314.)",
+  visit:["A torre de menagem e a mota do Château de Gisors","Igreja St-Gervais-St-Protais (gótico-renascentista)","As muralhas e os jardins do castelo","O centro histórico de mercado"],
+  knownFor:"A sua lenda do tesouro dos Templários e um dos melhores castelos de mota e torre da Normandia."},
+ {e:"🪨",c:"#2E5496",n:"Étretat",intro:"Aldeia piscatória sobre falésias na Costa de Alabastro, onde promontórios de giz mergulham no mar em arcos gigantes e uma solitária 'agulha' de rocha.",
+  history:["Uma humilde aldeia de pescadores até cerca de 1850, quando se tornou uma estância na moda, atraindo artistas e escritores parisienses.","Monet regressou todos os anos entre 1883 e 1886, pintando mais de 60 telas destas falésias."],
+  curious:"Maupassant comparou o arco da Porte d'Aval a um elefante a mergulhar a tromba no mar; depois de o ver, não se esquece.",
+  visit:["Arco da Porte d'Aval e a Aiguille ('Agulha')","Falésia da Porte d'Amont","Capela Notre-Dame de la Garde, no alto","A praia de calhau e o passeio marítimo"],
+  knownFor:"A pintura impressionista (Monet, Boudin, Courbet) e o ladrão-cavalheiro Arsène Lupin de Maurice Leblanc, ambientado na Agulha."},
+ {e:"⚓",c:"#3a7ca5",n:"Honfleur",intro:"Um porto normando de bilhete-postal, onde casas altas com fachadas de ardósia se debruçam sobre uma doca do século XVII pintada inúmeras vezes.",
+  history:["Foi deste porto que Samuel de Champlain partiu em 1608 para fundar a cidade de Quebeque.","A doca do Vieux Bassin foi construída em 1681 por ordem de Colbert, ministro de Luís XIV."],
+  curious:"A Igreja de Sainte-Catherine é a maior igreja de madeira de França; construída por carpinteiros navais, as suas duas naves parecem cascos de barco invertidos.",
+  visit:["O Vieux Bassin (doca antiga)","Igreja de Sainte-Catherine e o seu campanário separado","Museu Eugène Boudin","Os antigos armazéns de sal"],
+  knownFor:"Um berço do Impressionismo; terra do pintor Eugène Boudin (mentor de Monet) e do compositor Erik Satie."},
+ {e:"🎖️",c:"#6b7a3a",n:"Bayeux",intro:"Uma bela cidade medieval que escapou à destruição da guerra e guarda a mais famosa crónica bordada do mundo.",
+  history:["A primeira cidade da França continental libertada após o Dia D, a 7 de junho de 1944, e sobreviveu quase intacta.","A Tapeçaria terá sido encomendada na década de 1070 pelo bispo Odo, meio-irmão de Guilherme, o Conquistador."],
+  curious:"A 'Tapeçaria de Bayeux' não é uma tapeçaria; é um bordado de 70 metros. Os nazis esconderam-na no Louvre e quase a enviaram para Berlim em 1944.",
+  visit:["O museu da Tapeçaria de Bayeux","Catedral de Notre-Dame","Cemitério Militar de Bayeux","Cidade velha medieval e o moinho de água no Aure"],
+  knownFor:"A Tapeçaria de Bayeux, do século XI, sobre a Conquista Normanda de 1066, e, historicamente, a renda de Bayeux."},
+ {e:"🪖",c:"#7a6a45",n:"Praias do Dia D",intro:"O litoral da Normandia onde desembarcou, a 6 de junho de 1944, a maior invasão marítima da história; falésias, cemitérios e os restos de um porto artificial.",
+  history:["Na Pointe du Hoc, os Rangers norte-americanos escalaram falésias de 30 metros só para descobrir que os canhões alemães já tinham sido deslocados para o interior.","A 'Omaha sangrenta' custou cerca de 2.400 baixas norte-americanas num único dia."],
+  curious:"Em Arromanches, os Aliados rebocaram um porto pré-fabricado 'Mulberry', apelidado de Port Winston; concebido para durar 3 meses, serviu 10.",
+  visit:["O alto da Pointe du Hoc, cheio de crateras","Praia de Omaha","Cemitério Americano da Normandia, em Colleville (9.387 campas)","Arromanches e os seus caixotões Mulberry"],
+  knownFor:"O desembarque do Dia D e a Batalha da Normandia; local de peregrinação da memória da II Guerra Mundial."},
+ {e:"🏰",c:"#7d5ba6",n:"Mont Saint-Michel",intro:"Uma imponente abadia gótica no topo de um ilhéu rochoso que o mar rodeia e abandona duas vezes por dia.",
+  history:["Fundada em 708 quando, segundo a lenda, o Arcanjo Miguel apareceu ao bispo Auberto de Avranches.","Grande local de peregrinação medieval; Património Mundial da UNESCO desde 1979."],
+  curious:"Os locais avisam que a maré entra 'tão depressa como um cavalo a galope' (cerca de um metro por minuto) sobre areias que escondem areias movediças.",
+  visit:["A igreja abacial e o claustro","As muralhas medievais e a Grande Rue","A baía na maré-cheia e na maré-vazia","A nova ponte pedonal"],
+  knownFor:"A sua abadia em ilha de maré e a leve omelete soufflé de La Mère Poulard, servida a peregrinos desde a década de 1880."},
+ {e:"🦪",c:"#2a9d8f",n:"Cancale",intro:"Um porto de pesca batido pela maresia, cuja identidade gira toda em torno de um molusco reluzente: a ostra.",
+  history:["Nomeado fornecedor oficial de ostras da mesa real francesa; Luís XIV mandava-as levar a Versalhes às carradas.","Os romanos já apreciavam as ostras destes bancos selvagens há cerca de 2.000 anos."],
+  curious:"Compre ostras no mercado do cais, junto ao farol, coma-as no paredão e atire as conchas vazias para a praia lá em baixo.",
+  visit:["O mercado das ostras e o miradouro da Pointe du Hock","O porto ativo (Port de la Houle)","Restaurantes de marisco na frente de mar","Vistas até ao Mont Saint-Michel"],
+  knownFor:"As ostras de Cancale; a 'capital da ostra' de França, com vastos bancos de maré que rendem milhares de toneladas por ano."},
+ {e:"🏴‍☠️",c:"#36648b",n:"Saint-Malo",intro:"Uma cidade amuralhada em granito que se ergue diretamente do mar, cheia dos fantasmas dos corsários que a enriqueceram.",
+  history:["A 'Cité Corsaire' enviou durante séculos corsários com licença real (Duguay-Trouin, Surcouf) a saquear navios inimigos.","O seu navegador Jacques Cartier partiu daqui em 1534 e reivindicou o Canadá para França."],
+  curious:"A baía tem algumas das marés mais altas da Europa (cerca de 13 m); vá a pé até fortes-ilha na maré-vazia e fique 'ilhado' quando o mar regressa.",
+  visit:["O passeio pelas muralhas","A ilha do Grand Bé e o túmulo de Chateaubriand","A mansão corsária (Hôtel Magon)","As mansões malouinières"],
+  knownFor:"A herança corsária e as malouinières; grandes mansões erguidas por corsários enriquecidos com os saques no mar."},
+ {e:"🏘️",c:"#b5651d",n:"Dinan",intro:"Uma cidade medieval perfeitamente preservada, de casas de tabique que descem uma colina calcetada até um tranquilo porto fluvial.",
+  history:["A íngreme Rue du Jerzual ligou a cidade alta ao porto do Rance durante dez séculos, cheia de tecelões e curtidores.","O coração do cavaleiro bretão Bertrand du Guesclin repousa na Basílica de Saint-Sauveur."],
+  curious:"O corpo de Du Guesclin era tão disputado após a sua morte, em 1380, que foi dividido e sepultado em quatro locais; só o coração chegou a casa, a Dinan.",
+  visit:["A Rue du Jerzual e o porto ribeirinho","O castelo do século XIV e 3 km de muralhas","A torre do relógio (Tour de l'Horloge)","Basílica de Saint-Sauveur"],
+  knownFor:"As oficinas de artesãos (sopradores de vidro, douradores e outros ofícios) ao longo da medieval Rue du Jerzual."},
+ {e:"⛵",c:"#1d7874",n:"La Rochelle",intro:"Um luminoso porto atlântico onde três torres medievais ainda guardam uma doca cheia de veleiros, rodeada de ruas com arcadas.",
+  history:["Um bastião huguenote desafiador que se declarou república antes de o brutal cerco de Richelieu (1627 a 1628) reduzir a população de cerca de 27.000 para cerca de 5.000.","As torres de Saint-Nicolas e da Chaîne já esticaram entre si, todas as noites, uma enorme corrente de ferro para fechar o porto antigo."],
+  curious:"A Torre da Lanterna, o farol mais antigo da costa atlântica, guarda mais de 600 grafitos gravados por prisioneiros ali detidos.",
+  visit:["As três torres do porto","A cidade velha com arcadas","O Aquário","O Vieux-Port ao anoitecer"],
+  knownFor:"A herança marítima e um dos melhores aquários da Europa (12.000 animais e um centro de resgate de tartarugas marinhas)."},
+ {e:"🏝️",c:"#e09f3e",n:"Île de Ré",intro:"Uma ilha plana, caiada de branco e enfeitada de malvas-rosa, feita de salinas e ciclovias, ligada ao continente por uma ponte de 3 km.",
+  history:["A produção de sal aqui remonta à Idade Média e, depois de quase desaparecer, renasceu para cerca de 30 produtores atuais.","O Fort la Prée (1625), em forma de estrela, é o forte mais antigo da ilha, do tempo em que Buckingham, de Inglaterra, a cercou."],
+  curious:"Os burros dos pauis já foram vestidos com 'calças' de pano para proteger as pernas dos mosquitos; uma curiosidade hoje recuperada para os turistas.",
+  visit:["O porto de Saint-Martin-de-Ré e as muralhas de Vauban","As salinas","110 km de ciclovias","O farol Phare des Baleines"],
+  knownFor:"A flor de sal colhida à mão, as ostras, os 'burros de calças' e o ciclismo."},
+ {e:"🛶",c:"#52796f",n:"Marais Poitevin",intro:"Um labirinto silencioso e esmeralda de canais à sombra de árvores, melhor explorado a deslizar num barco de fundo chato.",
+  history:["Os canais de drenagem foram abertos por monges beneditinos entre os séculos X e XIII, recuperando o antigo Golfo dos Pictões.","A alcunha de 'Veneza Verde' fixou-se no século XIX; tornou-se Parque Natural Regional em 1979."],
+  curious:"Os tradicionais barcos de fundo chato eram tão estáveis que chegavam a transportar gado entre prados à beira-água.",
+  visit:["Um passeio de barco guiado a partir de um embarcadouro de aldeia","Coulon, a 'capital' do paul","Pedalar ou andar de canoa pelo paul húmido","A abundante vida de aves"],
+  knownFor:"Os seus barcos de fundo chato movidos a vara e um mosaico de canais verdes cobertos de lentilha-d'água e ilhotas de choupos."},
+ {e:"🐘",c:"#9c2c2c",n:"Nantes",intro:"Uma antiga capital ducal à beira do Loire, reinventada, onde criaturas mecânicas gigantes percorrem uma ilha e a arte transborda pelas ruas.",
+  history:["O Château des Ducs de Bretagne foi a sede dos últimos duques da Bretanha, incluindo Ana da Bretanha, duas vezes Rainha de França.","O maior porto negreiro francês do século XVIII, Nantes encara hoje esse passado com um Memorial da Abolição da Escravatura no cais."],
+  curious:"Júlio Verne, aqui nascido em 1828, terá alimentado a sua imaginação marítima com os veleiros que enchiam os cais da cidade.",
+  visit:["Les Machines de l'Île (o Grande Elefante)","Château des Ducs de Bretagne","Museu Júlio Verne","Le Lieu Unique (antiga fábrica de bolachas LU)"],
+  knownFor:"Les Machines de l'Île, as bolachas LU 'Petit Beurre' e o fresco vinho branco Muscadet."},
 ];
 const discList=document.getElementById('discList');
 DISC.forEach(p=>{
@@ -535,10 +535,10 @@ DISC.forEach(p=>{
        <div class="chev">▶</div>
      </div>
      <div class="body"><div class="inner">
-       <div class="disc-sec"><h4>📜 History</h4><ul>${hist}</ul></div>
-       <div class="curious">💡 <b>Did you know?</b> ${p.curious}</div>
-       <div class="disc-sec"><h4>📍 Don't miss</h4><ul>${vis}</ul></div>
-       <div class="knownfor">🎨 <b>Known for:</b> ${p.knownFor}</div>
+       <div class="disc-sec"><h4>📜 História</h4><ul>${hist}</ul></div>
+       <div class="curious">💡 <b>Sabia que?</b> ${p.curious}</div>
+       <div class="disc-sec"><h4>📍 Não perder</h4><ul>${vis}</ul></div>
+       <div class="knownfor">🎨 <b>Conhecida por:</b> ${p.knownFor}</div>
      </div></div>
    </div>`);
 });
@@ -546,7 +546,7 @@ DISC.forEach(p=>{
 /* ---------- live weather (Open-Meteo, no key) ---------- */
 const WLOCS=[
  ["Gisors",49.2807,1.7783],["Étretat",49.7073,0.2047],["Honfleur",49.4189,0.2336],
- ["Bayeux",49.2764,-0.7024],["D-Day Beaches",49.37,-0.85],["Mont Saint-Michel",48.6361,-1.5115],
+ ["Bayeux",49.2764,-0.7024],["Praias do Dia D",49.37,-0.85],["Mont Saint-Michel",48.6361,-1.5115],
  ["Cancale",48.6766,-1.8508],["Saint-Malo",48.6493,-2.0257],["Dinan",48.4554,-2.0489],
  ["La Rochelle",46.1603,-1.1511],["Île de Ré",46.2017,-1.3667],["Marais Poitevin",46.32,-0.59],
  ["Nantes",47.2184,-1.5536],["Lisbon",38.7223,-9.1393]
@@ -608,12 +608,12 @@ function initMap(){
        display:grid;place-items:center;font-weight:800;font-size:13px;border:3px solid #fff;
        box-shadow:0 2px 6px rgba(0,0,0,.35)">${d.n}</div>`,iconSize:[30,30],iconAnchor:[15,15]});
     L.marker(d.ll,{icon}).addTo(map)
-     .bindPopup(`<div class="pop"><b>Day ${d.n} · ${d.title.split('→').pop().trim()}</b><p>${d.date} · ${d.route}</p>
-       ${d.hotel?'🛏️ '+d.hotel.n:'🏠 Fly home'}</div>`);
+     .bindPopup(`<div class="pop"><b>Dia ${d.n} · ${d.title.split('→').pop().trim()}</b><p>${d.date} · ${d.route}</p>
+       ${d.hotel?'🛏️ '+d.hotel.n:'🏠 Regresso a casa'}</div>`);
   });
   L.polyline(pts,{color:'#E8530E',weight:3,opacity:.7,dashArray:'1,8',lineCap:'round'}).addTo(map);
   // airports
-  [[49.0097,2.5479,'✈ CDG — arrive & pick up car'],[47.1532,-1.6107,'✈ NTE — drop car & fly home']].forEach(a=>{
+  [[49.0097,2.5479,'✈ CDG · chegada e levantamento do carro'],[47.1532,-1.6107,'✈ NTE · entrega do carro e regresso']].forEach(a=>{
     L.marker([a[0],a[1]],{icon:L.divIcon({className:'',html:
       `<div style="font-size:20px">✈️</div>`,iconSize:[24,24],iconAnchor:[12,12]})}).addTo(map).bindPopup(a[2]);
   });
