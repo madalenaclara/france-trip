@@ -210,7 +210,7 @@
   <section id="mapscreen" class="screen">
     <div style="position:relative">
       <div id="map"></div>
-      <div class="maphint">📍 Toque num local para saber mais</div>
+      <div class="maphint">📍 Toque num local · cada cor é um dia</div>
     </div>
   </section>
 
@@ -610,9 +610,19 @@ function initMap(){
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     {maxZoom:18,attribution:'© OpenStreetMap'}).addTo(map);
   L.control.zoom({position:'bottomright'}).addTo(map);
-  // driving route through the overnight stops
-  const pts=[]; DAYS.forEach(d=>{ if(d.n!==9) pts.push(d.ll); });
-  L.polyline(pts,{color:'#E8530E',weight:3,opacity:.55,dashArray:'1,8',lineCap:'round'}).addTo(map);
+  // one coloured line per day's route, starting from Paris (CDG)
+  const DAYPATHS=[
+   ["#2E5496",[[49.0097,2.5479],[49.2807,1.7783],[49.7073,0.2047]]],                                 // D1 CDG→Gisors→Étretat
+   ["#3a7ca5",[[49.7073,0.2047],[49.4189,0.2336],[49.2764,-0.7024]]],                                 // D2 →Honfleur→Bayeux
+   ["#6b7a3a",[[49.2764,-0.7024],[49.3956,-0.9892],[49.37,-0.85],[49.3375,-0.6206],[49.2764,-0.7024]]], // D3 D-Day loop
+   ["#7d5ba6",[[49.2764,-0.7024],[48.6839,-1.3577],[48.6361,-1.5115]]],                               // D4 →Avranches→Mont
+   ["#2a9d8f",[[48.6361,-1.5115],[48.6766,-1.8508],[48.6493,-2.0257],[48.4554,-2.0489]]],             // D5 →Cancale→St-Malo→Dinan
+   ["#b5651d",[[48.4554,-2.0489],[47.2184,-1.5536],[46.1603,-1.1511]]],                               // D6 →(Nantes)→La Rochelle
+   ["#e09f3e",[[46.1603,-1.1511],[46.2017,-1.3667],[46.1603,-1.1511]]],                               // D7 Île de Ré loop
+   ["#52796f",[[46.1603,-1.1511],[46.32,-0.59],[47.2184,-1.5536]]],                                   // D8 →Marais→Nantes
+   ["#9c2c2c",[[47.2184,-1.5536],[47.1532,-1.6107]]]                                                  // D9 →NTE
+  ];
+  DAYPATHS.forEach(r=>L.polyline(r[1],{color:r[0],weight:4,opacity:.8,lineCap:'round',lineJoin:'round'}).addTo(map));
   // a marker for EVERY stop, clickable → opens its "about" page
   const WCO=Object.fromEntries(WLOCS.map(l=>[l[0],[l[1],l[2]]]));
   DISC.forEach((p,i)=>{
