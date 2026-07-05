@@ -140,7 +140,9 @@
   .maphint{position:absolute;z-index:500;left:50%;transform:translateX(-50%);bottom:84px;
     background:rgba(31,56,100,.92);color:#fff;font-size:11.5px;padding:7px 14px;border-radius:20px;box-shadow:var(--shadow)}
   .leaflet-popup-content{margin:10px 12px;font-family:inherit}
-  .pop b{font-size:13px}.pop p{margin:3px 0 0;font-size:11px;color:var(--muted)}
+  .pop b{font-size:13px}.pop p{margin:3px 0 0;font-size:11px;color:var(--muted);line-height:1.45}
+  .popbtn{margin-top:9px;background:var(--accent);color:#fff;border:0;border-radius:20px;
+    padding:6px 13px;font-size:11.5px;font-weight:700;cursor:pointer;font-family:inherit}
 
   /* bookings */
   .bk{margin:11px 16px;background:var(--card);border-radius:16px;box-shadow:var(--shadow);
@@ -208,7 +210,7 @@
   <section id="mapscreen" class="screen">
     <div style="position:relative">
       <div id="map"></div>
-      <div class="maphint">📍 Toque num marcador para ver o dia</div>
+      <div class="maphint">📍 Toque num local para saber mais</div>
     </div>
   </section>
 
@@ -526,11 +528,11 @@ const DISC=[
   knownFor:"Les Machines de l'Île, as bolachas LU 'Petit Beurre' e o fresco vinho branco Muscadet."},
 ];
 const discList=document.getElementById('discList');
-DISC.forEach(p=>{
+DISC.forEach((p,i)=>{
   const hist=p.history.map(h=>`<li>${h}</li>`).join("");
   const vis=p.visit.map(v=>`<li>${v}</li>`).join("");
   discList.insertAdjacentHTML('beforeend',
-   `<div class="day" style="border-left-color:${p.c}">
+   `<div class="day" id="discCard-${i}" style="border-left-color:${p.c}">
      <div class="head" onclick="this.parentNode.classList.toggle('open')">
        <div class="daynum" style="background:linear-gradient(150deg,${p.c},${shade(p.c)});border-radius:50%;font-size:20px">${p.e}</div>
        <div class="ti"><b>${p.n}</b><p>${p.intro}</p></div>
@@ -545,6 +547,12 @@ DISC.forEach(p=>{
      </div></div>
    </div>`);
 });
+function goDisc(i){
+  go('discover');
+  const c=document.getElementById('discCard-'+i);
+  document.querySelectorAll('#discList .day.open').forEach(x=>x.classList.remove('open'));
+  if(c){c.classList.add('open');setTimeout(()=>c.scrollIntoView({behavior:'smooth',block:'start'}),160);}
+}
 
 /* ---------- live weather (Open-Meteo, no key) ---------- */
 const WLOCS=[
@@ -602,19 +610,20 @@ function initMap(){
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     {maxZoom:18,attribution:'© OpenStreetMap'}).addTo(map);
   L.control.zoom({position:'bottomright'}).addTo(map);
-  const pts=[];
-  DAYS.forEach(d=>{
-    if(d.n===9)return; // same as Nantes
-    pts.push(d.ll);
+  // driving route through the overnight stops
+  const pts=[]; DAYS.forEach(d=>{ if(d.n!==9) pts.push(d.ll); });
+  L.polyline(pts,{color:'#E8530E',weight:3,opacity:.55,dashArray:'1,8',lineCap:'round'}).addTo(map);
+  // a marker for EVERY stop, clickable → opens its "about" page
+  const WCO=Object.fromEntries(WLOCS.map(l=>[l[0],[l[1],l[2]]]));
+  DISC.forEach((p,i)=>{
+    const co=WCO[p.n]; if(!co)return;
     const icon=L.divIcon({className:'',html:
-      `<div style="width:30px;height:30px;border-radius:50%;background:${d.accent};color:#fff;
-       display:grid;place-items:center;font-weight:800;font-size:13px;border:3px solid #fff;
-       box-shadow:0 2px 6px rgba(0,0,0,.35)">${d.n}</div>`,iconSize:[30,30],iconAnchor:[15,15]});
-    L.marker(d.ll,{icon}).addTo(map)
-     .bindPopup(`<div class="pop"><b>Dia ${d.n} · ${d.title.split('→').pop().trim()}</b><p>${d.date} · ${d.route}</p>
-       ${d.hotel?'🛏️ '+d.hotel.n:'🏠 Regresso a casa'}</div>`);
+      `<div style="width:34px;height:34px;border-radius:50%;background:${p.c};color:#fff;
+       display:grid;place-items:center;font-size:17px;border:3px solid #fff;
+       box-shadow:0 2px 6px rgba(0,0,0,.35)">${p.e}</div>`,iconSize:[34,34],iconAnchor:[17,17]});
+    L.marker(co,{icon}).addTo(map)
+     .bindPopup(`<div class="pop"><b>${p.e} ${p.n}</b><p>${p.intro}</p><button class="popbtn" onclick="goDisc(${i})">Saber mais →</button></div>`);
   });
-  L.polyline(pts,{color:'#E8530E',weight:3,opacity:.7,dashArray:'1,8',lineCap:'round'}).addTo(map);
   // airports
   [[49.0097,2.5479,'✈ CDG · chegada e levantamento do carro'],[47.1532,-1.6107,'✈ NTE · entrega do carro e regresso']].forEach(a=>{
     L.marker([a[0],a[1]],{icon:L.divIcon({className:'',html:
