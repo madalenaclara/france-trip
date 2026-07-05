@@ -156,6 +156,8 @@
   .bk .rt .cx{font-size:9.5px;margin-top:3px;font-weight:700}
   .cx.free{color:var(--green)}.cx.hard{color:var(--red)}.cx.warn{color:var(--amber)}
   .legend{margin:14px 16px 4px;font-size:11.5px;color:var(--muted);text-align:center}
+  .doclink{display:inline-block;margin-top:6px;font-size:10.5px;font-weight:700;color:var(--navy2);
+    text-decoration:none;background:#eef2f8;padding:4px 10px;border-radius:20px}
 
   /* tab bar */
   .tabbar{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);
@@ -374,15 +376,15 @@ const DAYS = [
 
 const BOOKINGS = [
  {ic:"✈️",t:"Air France AF1225",s:"LIS T1 09:50 → CDG T2F 13:20",d:"Sáb 11 jul",ok:true,pr:"pago",cx:null,ref:"ZVTFHN · bilh 0572358752253"},
- {ic:"🚗",t:"Renault Arkana · automático",s:"Budget · CDG T2E/F → Nantes NTE · 8 dias",d:"11 a 19 jul",ok:true,pr:"pago",cx:{txt:"ver condições",cl:"warn"},ref:"657869748"},
- {ic:"🛏️",t:"Villa Maurice",s:"Étretat · 1 noite",d:"11 a 12 jul",ok:true,pr:"165 €",cx:{txt:"Grátis até 9 jul",cl:"free"},ref:"6185332214"},
- {ic:"🛏️",t:"Churchill Hotel Bayeux Centre",s:"Bayeux · 2 noites",d:"12 a 14 jul",ok:true,pr:"412,20 €",cx:{txt:"Não reembolsável",cl:"hard"},ref:"5752473040"},
- {ic:"🛏️",t:"Le Relais du Roy",s:"Mont S-M · La Caserne",d:"14 a 15 jul",ok:true,pr:"162,88 €",cx:{txt:"Grátis até 6 jul",cl:"free"},ref:"6744677040"},
- {ic:"🛏️",t:"Cafe Hôtel du Théâtre",s:"Centro histórico de Dinan",d:"15 a 16 jul",ok:true,pr:"75 €",cx:{txt:"Grátis até 13 jul",cl:"free"},ref:"5763847070"},
- {ic:"🛏️",t:"Le Saint-Nicolas",s:"La Rochelle · 2 noites",d:"16 a 18 jul",ok:true,pr:"266,61 €",cx:{txt:"Não reembolsável",cl:"hard"},ref:"5657462792"},
- {ic:"✈️",t:"Transavia TO7820",s:"NTE 18:05 → LIS 19:20",d:"Dom 19 jul",ok:true,pr:"pago",cx:null,ref:"KJEURH"},
- {ic:"🎟️",t:"Entrada Abadia do Mont",s:"Entrada com hora · 2 adultos",d:"15 jul 09:30",ok:true,pr:"70 €",cx:{txt:"Não reembolsável",cl:"hard"},ref:"2615646561280423030"},
- {ic:"🛏️",t:"Best Western Hotel Graslin",s:"Nantes · 1 Rue Piron, Centre Ville",d:"18 a 19 jul",ok:true,pr:"99,60 €",cx:{txt:"Não reembolsável",cl:"hard"},ref:"5355398693"},
+ {ic:"🚗",t:"Renault Arkana · automático",s:"Budget · CDG T2E/F → Nantes NTE · 8 dias",d:"11 a 19 jul",ok:true,pr:"pago",cx:{txt:"ver condições",cl:"warn"},ref:"657869748",doc:"03-car-budget.pdf"},
+ {ic:"🛏️",t:"Villa Maurice",s:"Étretat · 1 noite",d:"11 a 12 jul",ok:true,pr:"165 €",cx:{txt:"Grátis até 9 jul",cl:"free"},ref:"6185332214",doc:"04-hotel-etretat-villa-maurice.pdf"},
+ {ic:"🛏️",t:"Churchill Hotel Bayeux Centre",s:"Bayeux · 2 noites",d:"12 a 14 jul",ok:true,pr:"412,20 €",cx:{txt:"Não reembolsável",cl:"hard"},ref:"5752473040",doc:"05-hotel-bayeux-churchill.pdf"},
+ {ic:"🛏️",t:"Le Relais du Roy",s:"Mont S-M · La Caserne",d:"14 a 15 jul",ok:true,pr:"162,88 €",cx:{txt:"Grátis até 6 jul",cl:"free"},ref:"6744677040",doc:"06-hotel-mont-relais-du-roy.pdf"},
+ {ic:"🛏️",t:"Cafe Hôtel du Théâtre",s:"Centro histórico de Dinan",d:"15 a 16 jul",ok:true,pr:"75 €",cx:{txt:"Grátis até 13 jul",cl:"free"},ref:"5763847070",doc:"07-hotel-dinan-cafe-du-theatre.pdf"},
+ {ic:"🛏️",t:"Le Saint-Nicolas",s:"La Rochelle · 2 noites",d:"16 a 18 jul",ok:true,pr:"266,61 €",cx:{txt:"Não reembolsável",cl:"hard"},ref:"5657462792",doc:"08-hotel-larochelle-saint-nicolas.pdf"},
+ {ic:"✈️",t:"Transavia TO7820",s:"NTE 18:05 → LIS 19:20",d:"Dom 19 jul",ok:true,pr:"pago",cx:null,ref:"KJEURH",doc:"02-flight-return-transavia-KJEURH.pdf"},
+ {ic:"🎟️",t:"Entrada Abadia do Mont",s:"Entrada com hora · 2 adultos",d:"15 jul 09:30",ok:true,pr:"70 €",cx:{txt:"Não reembolsável",cl:"hard"},ref:"2615646561280423030",doc:"10-ticket-mont-abbey.pdf"},
+ {ic:"🛏️",t:"Best Western Hotel Graslin",s:"Nantes · 1 Rue Piron, Centre Ville",d:"18 a 19 jul",ok:true,pr:"99,60 €",cx:{txt:"Não reembolsável",cl:"hard"},ref:"5355398693",doc:"09-hotel-nantes-graslin.pdf"},
  {ic:"🎟️",t:"Bilhetes Tapeçaria de Bayeux",s:"Entrada com hora · 09:00",d:"13 jul",ok:false,pr:"~12 €/p",cx:null},
  {ic:"🛶",t:"Barco no Marais Poitevin",s:"Veneza Verde · Coulon",d:"18 jul",ok:false,pr:"~15 €/p",cx:null},
 ];
@@ -447,8 +449,9 @@ daysEl.firstElementChild.classList.add('open');
 function bkHTML(b){
   const cx=b.cx?`<div class="cx ${b.cx.cl}">${b.cx.cl==='hard'?'🔴 ':b.cx.cl==='free'?'🟢 ':''}${b.cx.txt}</div>`:"";
   const ref=b.ref?`<p class="ref"># ${b.ref}</p>`:"";
+  const doc=b.doc?`<a class="doclink" href="documents/${b.doc}" target="_blank" rel="noopener">📄 Ver documento</a>`:"";
   return `<div class="bk ${b.ok?'ok':'todo'}"><div class="ic">${b.ic}</div>
-    <div class="t"><b>${b.t}</b><p>${b.s}</p>${ref}<p style="color:#9aa3b2">${b.d}</p></div>
+    <div class="t"><b>${b.t}</b><p>${b.s}</p>${ref}<p style="color:#9aa3b2">${b.d}</p>${doc}</div>
     <div class="rt"><div class="pr">${b.pr}</div>${cx}</div></div>`;
 }
 document.getElementById('bkOk').innerHTML=BOOKINGS.filter(b=>b.ok).map(bkHTML).join("");
