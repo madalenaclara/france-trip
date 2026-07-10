@@ -378,7 +378,7 @@ const DAYS = [
 
 const BOOKINGS = [
  {ic:"✈️",t:"Air France AF1225",s:"LIS T1 09:50 → CDG T2F 13:20",d:"Sáb 11 jul",ok:true,pr:"pago",cx:null,ref:"ZVTFHN · bilh 0572358752253"},
- {ic:"🚗",t:"Renault Arkana · automático",s:"Budget · CDG T2E/F → Nantes NTE · 8 dias",d:"11 a 19 jul",ok:true,pr:"pago",cx:{txt:"ver condições",cl:"warn"},ref:"657869748",doc:"03-car-budget.pdf"},
+ {ic:"🚗",t:"Renault Arkana · automático",s:"Budget · CDG T2E/F → Nantes NTE · 8 dias",d:"11 a 19 jul",ok:true,pr:"pago",cx:{txt:"ver condições",cl:"warn"},ref:"657869748",docs:[["📄 Reserva","03-car-budget.pdf"],["📋 Condições","03-car-rules.pdf"]]},
  {ic:"🛏️",t:"Villa Maurice",s:"Étretat · 1 noite",d:"11 a 12 jul",ok:true,pr:"165 €",cx:{txt:"Grátis até 9 jul",cl:"free"},ref:"6185332214",doc:"04-hotel-etretat-villa-maurice.pdf"},
  {ic:"🛏️",t:"Churchill Hotel Bayeux Centre",s:"Bayeux · 2 noites",d:"12 a 14 jul",ok:true,pr:"412,20 €",cx:{txt:"Não reembolsável",cl:"hard"},ref:"5752473040",doc:"05-hotel-bayeux-churchill.pdf"},
  {ic:"🛏️",t:"Le Relais du Roy",s:"Mont S-M · La Caserne",d:"14 a 15 jul",ok:true,pr:"162,88 €",cx:{txt:"Grátis até 6 jul",cl:"free"},ref:"6744677040",doc:"06-hotel-mont-relais-du-roy.pdf"},
@@ -451,7 +451,8 @@ daysEl.firstElementChild.classList.add('open');
 function bkHTML(b){
   const cx=b.cx?`<div class="cx ${b.cx.cl}">${b.cx.cl==='hard'?'🔴 ':b.cx.cl==='free'?'🟢 ':''}${b.cx.txt}</div>`:"";
   const ref=b.ref?`<p class="ref"># ${b.ref}</p>`:"";
-  const doc=b.doc?`<a class="doclink" href="documents/${b.doc}" target="_blank" rel="noopener">📄 Ver documento</a>`:"";
+  const dlist=b.docs?b.docs:(b.doc?[["📄 Ver documento",b.doc]]:[]);
+  const doc=dlist.map(d=>`<a class="doclink" href="documents/${d[1]}" target="_blank" rel="noopener">${d[0]}</a>`).join(' ');
   return `<div class="bk ${b.ok?'ok':'todo'}"><div class="ic">${b.ic}</div>
     <div class="t"><b>${b.t}</b><p>${b.s}</p>${ref}<p style="color:#9aa3b2">${b.d}</p>${doc}</div>
     <div class="rt"><div class="pr">${b.pr}</div>${cx}</div></div>`;
